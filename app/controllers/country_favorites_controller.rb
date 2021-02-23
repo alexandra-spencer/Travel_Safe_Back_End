@@ -1,0 +1,2 @@
+class CountryFavoritesController < ApplicationController
+end

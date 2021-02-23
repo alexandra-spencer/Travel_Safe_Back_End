@@ -1,0 +1,2 @@
+class CountryFavorite < ApplicationRecord
+end

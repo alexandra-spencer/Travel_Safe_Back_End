@@ -1,0 +1,2 @@
+class CountryCommentsController < ApplicationController
+end
