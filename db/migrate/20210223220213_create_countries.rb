@@ -1,15 +1,13 @@
 class CreateCountries < ActiveRecord::Migration[6.1]
   def change
     create_table :countries do |t|
-      t.string :continent
-      t.string :weather_min
-      t.string :weather_max
-      t.string :vaccinations
-      t.string :water
-      t.string :currency
-      t.string :us_dollar_rate
-      t.string :outlet_type
-
+      t.string :name
+      t.string :url
+      # t.string :continent
+      # t.string :vaccinations
+      # t.string :water
+      # t.string :currency
+      # t.string :plugs
       t.timestamps
     end
   end
