@@ -15,6 +15,11 @@ ActiveRecord::Schema.define(version: 2021_02_23_220642) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.string "url"
+    t.string "continent"
+    t.string "vaccinations"
+    t.string "water"
+    t.string "currency"
+    t.string "plugs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
