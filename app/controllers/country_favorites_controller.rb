@@ -19,4 +19,5 @@ class CountryFavoritesController < ApplicationController
     country_favorite.destroy
     render json: {}
   end
+
 end
