@@ -10,7 +10,7 @@ class CountryCommentsController < ApplicationController
   end
 
   def create
-    country_comment = CountryComment.create(user_id: params[:user_id], country_id: params[:country_id])
+    country_comment = CountryComment.create(user_id: params[:user_id], country_id: params[:country_id], text: params[:text], rating: params[:rating])
     render json: country_comment
   end
 
