@@ -66,3 +66,4 @@ CountryFavorite.create(user_id: 1, country_id: 1)
 # List of user comments and the associate country
 CountryComment.create(user_id: 1, country_id: 1, text: "Love it there", rating: 10)
 
+TravelAdvisory.create(text:)
