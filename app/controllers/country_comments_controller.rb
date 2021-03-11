@@ -16,7 +16,7 @@ class CountryCommentsController < ApplicationController
 
   def update
     country_comment = CountryComment.find(params[:id])
-    country_comment.update(text: params[:text])
+    country_comment.update(text: params[:text], rating: params[:rating])
     render json: country_comment
   end
 
