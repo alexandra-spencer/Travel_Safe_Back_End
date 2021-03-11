@@ -39,20 +39,22 @@ country_hash.each do |country|
     "no vaccines required"
   end
 
-  # water = if country_info['water']['short'].count != 0
-  #   country_info['water']['short']
-  # else
-  #   nil
-  # end
+  water = if country_info['water']['short'] != "null"
+    country_info['water']['short']
+  else
+    "no data available"
+  end
+
 
   plugs = if country_info['electricity']['plugs'].count != 0
-    country_info['electricity']['plugs'][0][0]
+    # country_info['electricity']['plugs'][0][0]
+    country_info['electricity']['plugs'][0].slice(0)
   else
     "no plugs"
   end
 
 
-  usd = JSON.stringify(country_info['currency']['compare'])
+  exchange_rates = country_info['currency']['compare'].to_s
 
 
   new_country = Country.create(
@@ -60,9 +62,9 @@ country_hash.each do |country|
     url: country['url'],
     continent: country_info['names']['continent'],
     vaccinations: vaccines,
-    water: country_info['water']['short'],
+    water: water,
     currency: country_info['currency']['name'],
-    usd: usd,
+    exchange_rates: exchange_rates,
     plugs: plugs
   )
 

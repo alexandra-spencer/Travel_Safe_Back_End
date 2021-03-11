@@ -7,6 +7,7 @@ class CreateCountries < ActiveRecord::Migration[6.1]
       t.string :vaccinations
       t.string :water
       t.string :currency
+      t.string :exchange_rates
       t.string :plugs
       t.timestamps
     end
