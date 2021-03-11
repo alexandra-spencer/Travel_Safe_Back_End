@@ -39,11 +39,20 @@ country_hash.each do |country|
     "no vaccines required"
   end
 
+  # water = if country_info['water']['short'].count != 0
+  #   country_info['water']['short']
+  # else
+  #   nil
+  # end
+
   plugs = if country_info['electricity']['plugs'].count != 0
     country_info['electricity']['plugs'][0][0]
   else
     "no plugs"
   end
+
+
+  usd = JSON.stringify(country_info['currency']['compare'])
 
 
   new_country = Country.create(
@@ -53,6 +62,7 @@ country_hash.each do |country|
     vaccinations: vaccines,
     water: country_info['water']['short'],
     currency: country_info['currency']['name'],
+    usd: usd,
     plugs: plugs
   )
 
@@ -66,4 +76,3 @@ CountryFavorite.create(user_id: 1, country_id: 1)
 # List of user comments and the associate country
 CountryComment.create(user_id: 1, country_id: 1, text: "Love it there", rating: 10)
 
-TravelAdvisory.create(text:)
